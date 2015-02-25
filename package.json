@@ -1,0 +1,20 @@
+{
+  "name": "gulp-tsformat",
+  "version": "1.0.0",
+  "description": "Checks that code is properly formatted",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alexeagle/gulp-tsformat.git"
+  },
+  "main": "index.js",
+  "author": "Alex Eagle <alexeagle@google.com>",
+  "license": "Apache 2",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  },
+  "dependencies": {
+    "stream-equal": "^0.1.5",
+    "through2": "^0.6.3",
+    "clang-format": "^1.0.0"
+  }
+}
