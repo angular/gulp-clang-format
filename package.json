@@ -4,7 +4,7 @@
   "description": "Checks that code is properly formatted",
   "repository": {
     "type": "git",
-    "url": "git@github.com:alexeagle/gulp-clang-format.git"
+    "url": "git@github.com:angular/gulp-clang-format.git"
   },
   "main": "index.js",
   "author": "Alex Eagle <alexeagle@google.com>",
@@ -15,6 +15,6 @@
   "dependencies": {
     "stream-equal": "^0.1.5",
     "through2": "^0.6.3",
-    "clang-format": "^1.0.1"
+    "clang-format": "^1.0.2"
   }
 }
