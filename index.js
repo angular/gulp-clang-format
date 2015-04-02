@@ -41,7 +41,10 @@ module.exports = {
             gutil.log("WARNING: Files are not properly formatted. Please run");
             gutil.log("  clang-format -i -style='" + optsStr + "' " +
                       errors.join(' '));
+            this.emit('warning', new gutil.PluginError('gulp-clang-format',
+                                                       'files not formatted'));
           }
+          cb();
         });
   }
 };
