@@ -38,8 +38,11 @@ module.exports = {
         },
         function(cb) {
           if (errors.length > 0) {
+            // Avoid version skew between the version installed under gulp-clang-format and any
+            // version that was installed globally
+            var clangFormatBin = "./node_modules/gulp-clang-format/node_modules/clang-format/index.js";
             gutil.log("WARNING: Files are not properly formatted. Please run");
-            gutil.log("  clang-format -i -style='" + optsStr + "' " +
+            gutil.log("  " + clangFormatBin + " -i -style='" + optsStr + "' " +
                       errors.join(' '));
             this.emit('warning', new gutil.PluginError('gulp-clang-format',
                                                        'files not formatted'));
