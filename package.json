@@ -1,6 +1,6 @@
 {
   "name": "gulp-clang-format",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Checks that code is properly formatted",
   "repository": {
     "type": "git",
