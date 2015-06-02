@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "author": "Alex Eagle <alexeagle@google.com>",
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "devDependencies": {
     "gulp": "^3.8.11"
   },
