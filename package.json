@@ -1,13 +1,15 @@
 {
   "name": "gulp-clang-format",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Checks that code is properly formatted",
   "repository": {
     "type": "git",
     "url": "git@github.com:angular/gulp-clang-format.git"
   },
   "main": "index.js",
-  "scripts": {"test": "gulp test"},
+  "scripts": {
+    "test": "gulp test"
+  },
   "contributors": [
     "Alex Eagle <alexeagle@google.com> (https://angularjs.org/)",
     "Martin Probst <martinprobst@google.com> (https://angularjs.org/)"
