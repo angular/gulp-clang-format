@@ -7,7 +7,11 @@
     "url": "git@github.com:angular/gulp-clang-format.git"
   },
   "main": "index.js",
-  "author": "Alex Eagle <alexeagle@google.com>",
+  "scripts": {"test": "gulp test"},
+  "contributors": [
+    "Alex Eagle <alexeagle@google.com> (https://angularjs.org/)",
+    "Martin Probst <martinprobst@google.com> (https://angularjs.org/)"
+  ],
   "license": "Apache-2.0",
   "devDependencies": {
     "gulp": "^3.8.11"

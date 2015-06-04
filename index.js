@@ -1,5 +1,6 @@
 var clangFormat = require('clang-format');
 var fs = require('fs');
+var path = require('path');
 var gutil = require('gulp-util');
 var streamEqual = require('stream-equal');
 var through = require('through2');
@@ -44,11 +45,9 @@ module.exports = {
             var clangFormatBin =
                 './node_modules/gulp-clang-format/node_modules/clang-format/index.js';
             gutil.log('WARNING: Files are not properly formatted. Please run');
-            gutil.log('  ' + clangFormatBin + ' -i -style='' + optsStr + '' ' +
+            gutil.log('  ' + clangFormatBin + ' -i -style="' + optsStr + '" ' +
                       errors.join(' '));
-
-            var cfVersion = require('pkginfo')('clang-format', 'version');
-            gutil.log('  (using clang-format version ' + cfVersion + ')');
+            gutil.log('  (using clang-format version ' + getClangFormatVersion() + ')');
             this.emit('warning', new gutil.PluginError('gulp-clang-format',
                                                        'files not formatted'));
           }
@@ -56,3 +55,17 @@ module.exports = {
         });
   }
 };
+
+function getClangFormatVersion() {
+  var pkg;
+  var cf = require.resolve('clang-format');
+  var cfPath = cf;
+  while ((cfPath = path.dirname(cfPath)) !== '/') {
+    pkg = path.join(cfPath, 'package.json');
+    if (fs.existsSync(pkg)) {
+      var content = JSON.parse(fs.readFileSync(pkg, 'utf-8'));
+      return content['version'];
+    }
+  }
+  throw new Error('Could not find clang-format version for ' + cf);
+}
