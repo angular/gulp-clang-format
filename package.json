@@ -13,9 +13,10 @@
     "gulp": "^3.8.11"
   },
   "dependencies": {
+    "clang-format": "^1.0.17",
     "gulp-util": "^3.0.4",
+    "pkginfo": "^0.3.0",
     "stream-equal": "^0.1.5",
-    "through2": "^0.6.3",
-    "clang-format": "^1.0.17"
+    "through2": "^0.6.3"
   }
 }
