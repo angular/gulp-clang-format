@@ -24,7 +24,7 @@
     "gulp-util": "^3.0.4",
     "pkginfo": "^0.3.0",
     "stream-combiner2": "^1.1.1",
-    "stream-equal": "^0.1.5",
+    "stream-equal": "0.1.6",
     "through2": "^0.6.3"
   }
 }
