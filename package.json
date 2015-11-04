@@ -19,9 +19,11 @@
     "gulp": "^3.8.11"
   },
   "dependencies": {
-    "clang-format": "^1.0.25",
+    "clang-format": "^1.0.32",
+    "gulp-diff": "^1.0.0",
     "gulp-util": "^3.0.4",
     "pkginfo": "^0.3.0",
+    "stream-combiner2": "^1.1.1",
     "stream-equal": "^0.1.5",
     "through2": "^0.6.3"
   }
