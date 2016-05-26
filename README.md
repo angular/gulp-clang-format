@@ -11,15 +11,18 @@ Sample gulpfile.js:
 ```js
 var format = require('gulp-clang-format');
 
+var srcsToFmt = ['path/**/*.js'];
+
 gulp.task('check-format', function() {
-  return gulp.src('*.js')
+  return gulp.src(srcsToFmt)
      .pipe(format.checkFormat());
 });
 
 gulp.task('format', function() {
-  return gulp.src('*.js')
+  // The base option ensures the glob doesn't strip prefixes
+  return gulp.src(srcsToFmt, {base: '.'})
       .pipe(format.format())
-      .pipe(gulp.dest('formatted'));
+      .pipe(gulp.dest('.'));
 });
 ```
 
