@@ -21,15 +21,16 @@ function format(opt_clangOptions, opt_clangFormat) {
   var actualClangFormat = opt_clangFormat || clangFormat;
   var optsStr = getOptsString(opt_clangOptions);
 
+  function onClangFormatFinished() {
+    file.contents = new Buffer(formatted);
+    done(null, file);
+  }
+
   function formatFilter(file, enc, done) {
     var formatted = '';
-    actualClangFormat(file, enc, optsStr, done)
+    actualClangFormat(file, enc, optsStr, onClangFormatFinished)
         .on('data', function(b) { formatted += b.toString(); })
-        .on('error', this.emit.bind(this, 'error'))
-        .on('end', function() {
-          file.contents = new Buffer(formatted);
-          done(null, file);
-        });
+        .on('error', this.emit.bind(this, 'error'));
   }
   return through2.obj(formatFilter);
 }
