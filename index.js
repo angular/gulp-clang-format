@@ -21,12 +21,11 @@ function format(opt_clangOptions, opt_clangFormat) {
   var actualClangFormat = opt_clangFormat || clangFormat;
   var optsStr = getOptsString(opt_clangOptions);
 
-  function onClangFormatFinished() {
-    file.contents = new Buffer(formatted);
-    done(null, file);
-  }
-
   function formatFilter(file, enc, done) {
+    function onClangFormatFinished() {
+      file.contents = new Buffer(formatted);
+      done(null, file);
+    }
     var formatted = '';
     actualClangFormat(file, enc, optsStr, onClangFormatFinished)
         .on('data', function(b) { formatted += b.toString(); })
