@@ -23,7 +23,7 @@ function format(opt_clangOptions, opt_clangFormat) {
 
   function formatFilter(file, enc, done) {
     function onClangFormatFinished() {
-      file.contents = new Buffer(formatted);
+      file.contents = Buffer.from(formatted, 'utf-8');
       done(null, file);
     }
     var formatted = '';

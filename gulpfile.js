@@ -8,5 +8,5 @@ gulp.task('default', function() {
 
 gulp.task('test', function() {
   gulp.src('test/test.ts', {read: false})
-      .pipe(checkFormat({BasedOnStyle: 'Google', ColumnLimit: 120}));
+      .pipe(checkFormat({BasedOnStyle: 'Google', ColumnLimit: 120}, clangFormat, {verbose: true}));
 });
