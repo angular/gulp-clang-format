@@ -2,10 +2,9 @@
 var clangFormat = require('clang-format');
 var combine = require('stream-combiner2');
 var diff = require('gulp-diff');
-var fs = require('fs');
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
+var log = require('fancy-log');
 var path = require('path');
-var streamEqual = require('stream-equal');
 var through2 = require('through2');
 
 
@@ -67,13 +66,13 @@ function checkFormat(opt_clangOptions, opt_clangFormat, opt_gulpOptions) {
                function(done) {
                  if (filePaths.length) {
                    var clangFormatBin = path.relative(process.cwd(), actualClangFormat.location);
-                   gutil.log('WARNING: Files are not properly formatted. Please run');
-                   gutil.log('  ' + clangFormatBin + ' -i -style="' + optsStr + '" ' +
+                   log('WARNING: Files are not properly formatted. Please run');
+                   log('  ' + clangFormatBin + ' -i -style="' + optsStr + '" ' +
                              filePaths.join(' '));
-                   gutil.log('  (using clang-format version ' + actualClangFormat.version + ')');
+                   log('  (using clang-format version ' + actualClangFormat.version + ')');
                    var level = opt_gulpOptions.fail ? 'error' : 'warning';
                    pipe.emit(level,
-                             new gutil.PluginError('gulp-clang-format', 'files not formatted'));
+                             new PluginError('gulp-clang-format', 'files not formatted'));
                  }
                  done();
                }));
