@@ -61,7 +61,7 @@ function checkFormat(opt_clangOptions, opt_clangFormat, opt_gulpOptions) {
       pipe,
       through2({objectMode: true},
                function(f, enc, done) {
-                 if (f.diff && Object.keys(f.diff).length) filePaths.push(f.path);
+                 if (f.diff && Object.keys(f.diff).length) filePaths.push(path.relative(process.cwd(), f.path));
                  done(null, f);
                },
                function(done) {
