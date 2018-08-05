@@ -3,10 +3,10 @@ var checkFormat = require('./').checkFormat;
 var clangFormat = require('clang-format');
 
 gulp.task('default', function() {
-  gulp.src('*.js').pipe(checkFormat('file', clangFormat, {verbose: true, fail: true}));
+  return gulp.src('*.js').pipe(checkFormat('file', clangFormat, {verbose: true, fail: true}));
 });
 
 gulp.task('test', function() {
-  gulp.src('test/test.ts', {read: false})
+  return gulp.src('test/test.ts', {read: false})
       .pipe(checkFormat({BasedOnStyle: 'Google', ColumnLimit: 120}, clangFormat, {verbose: true}));
 });
