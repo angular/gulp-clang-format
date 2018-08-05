@@ -19,7 +19,7 @@
     "gulp": "^3.9.1"
   },
   "dependencies": {
-    "clang-format": "^1.0.32",
+    "clang-format": "^1.2.4",
     "fancy-log": "^1.3.2",
     "gulp-diff": "^1.0.0",
     "plugin-error": "^1.0.1",
