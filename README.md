@@ -1,4 +1,5 @@
-# gulp-clang-format
+# gulp-clang-format [![Build Status](https://circleci.com/gh/angular/gulp-clang-format.svg?style=svg)](https://circleci.com/gh/angular/gulp-clang-format)
+
 Gulp plugin to check that code is properly formatted, according to clang-format.
 
 If the code differs from how clang-format would format it, this prints a warning
