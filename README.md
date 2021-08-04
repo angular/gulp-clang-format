@@ -1,4 +1,4 @@
-# gulp-clang-format [![Build Status](https://circleci.com/gh/angular/gulp-clang-format.svg?style=svg)](https://circleci.com/gh/angular/gulp-clang-format)
+# gulp-clang-format [![Build Status](https://github.com/angular/gulp-clang-format/actions/workflows/node.js.yml/badge.svg)](https://github.com/angular/gulp-clang-format/actions/workflows/node.js.yml)
 
 Gulp plugin to check that code is properly formatted, according to clang-format.
 
